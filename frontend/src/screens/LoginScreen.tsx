@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from "react-native";
 import LoginComponent from "../components/LoginComponent";
-import CreateAccountComponent from "../components/CreateAccountComponent";
-
 
 export default function LoginScreen() {
 
@@ -10,14 +8,10 @@ export default function LoginScreen() {
 
   const [login, onChangeLogin] = React.useState('');
   const [password, onChangePassword] = React.useState('');
-  const loginComponent = LoginComponent();
-  const createAccountComponent = CreateAccountComponent();
-
-  const Demo = () => isLoggin ? loginComponent : createAccountComponent
 
   return (
     <View style={styles.container}>
-      <Demo />
+      <LoginComponent />
     </View>
   );
 }
