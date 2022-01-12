@@ -3,19 +3,19 @@ import { IUserRepository } from '../../../repositories/IUserRepository';
 
 interface iUserRequest {
   firstName: string;
-  lastName: string;
   email: string;
+  password: string;
 }
 
 class CreateUserService {
   constructor(private userRepository: IUserRepository) {}
 
-  async execute({ firstName, lastName, email }: iUserRequest) {
+  async execute({ firstName, email, password }: iUserRequest) {
     const userAlreadyExists = await this.userRepository.exists(email);
     if(userAlreadyExists) {
       throw new Error('User already exists')
     }
-    const userCreate = User.create({ firstName, lastName, email });
+    const userCreate = User.create({ firstName, email, password });
     const user = await this.userRepository.create(userCreate);
     return user;
   }

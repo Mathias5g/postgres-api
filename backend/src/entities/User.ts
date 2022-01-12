@@ -2,19 +2,19 @@ class User {
 
   uuid?: string;
   firstName: string;
-  lastName: string;
   email: string;
+  password: string;
 
-  private constructor({ firstName, lastName, email }: User) {
+  private constructor({ firstName, email, password }: User) {
     return Object.assign(this, {
       firstName,
-      lastName,
-      email
+      email,
+      password
     });
   }
 
-  static create({ firstName, lastName, email }: User) {
-    const user = new User({ firstName, lastName, email });
+  static create({ firstName, email, password }: User) {
+    const user = new User({ firstName, email, password });
     return user;
   }
 }
