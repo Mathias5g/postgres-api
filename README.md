@@ -25,7 +25,7 @@ Ter instalado as seguintes ferramentas
     cd frontend
 ```
 
-3. Baixe os pacotes npm
+3. Baixe os pacotes npm em suas respectivas stack
 ```shell
     yarn install 
 ```
@@ -46,6 +46,12 @@ DATABASE_
 3. Rodar o servidor localmente utilizando o seguinte comando
 ```shell
   yarn dev
+```
+
+4. Rodar o aplicativo localmente utilizando o seguinte comando
+```shell
+  yarn android
+  yarn ios
 ```
 
 
